@@ -1,0 +1,33 @@
+# Nama pipeline Anda
+name: CI Pipeline PPL
+
+# Pemicu (trigger) pipeline
+# Pipeline ini akan berjalan setiap kali ada 'push' ke 'branch main'
+on:
+  push:
+    branches: [ main ]
+
+# Daftar pekerjaan (jobs) yang akan dijalankan
+jobs:
+  # Nama job (bisa apa saja)
+  build-and-test:
+    # Menentukan sistem operasi untuk menjalankan job
+    runs-on: ubuntu-latest
+
+    # Langkah-langkah (steps) yang akan dieksekusi
+    steps:
+      # Langkah 1: Mengunduh (checkout) kode dari repository
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      # Langkah 2: Menjalankan "validasi sederhana"
+      # Kita akan memeriksa apakah kata "NIM" dan "Nama" ada di file index.html
+      - name: Run simple validation test
+        run: |
+          echo "Memulai validasi konten file index.html..."
+          if grep -q "NIM" index.html && grep -q "Nama" index.html; then
+            echo "Validasi Sukses: NIM dan Nama ditemukan."
+          else
+            echo "Validasi Gagal: NIM atau Nama tidak ditemukan di index.html"
+            exit 1 # Memberi sinyal gagal ke pipeline
+          fi
