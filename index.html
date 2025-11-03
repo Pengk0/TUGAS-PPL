@@ -3,11 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugas 2 PPL</title>
+    <title>Tugas 2 PPL - Identitas</title>
+    
+    <style>
+        /* Mengatur font dasar dan latar belakang halaman */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f0f2f5; /* Latar belakang abu-abu muda */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        /* Membuat "kartu" untuk membungkus identitas */
+        .identity-card {
+            background-color: #ffffff; /* Latar belakang kartu putih */
+            border-radius: 10px; /* Sudut melengkung */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+            padding: 2rem 3rem; /* Jarak di dalam kartu */
+            width: 90%;
+            max-width: 500px; /* Lebar maksimum kartu */
+            box-sizing: border-box;
+        }
+
+        /* Mengatur judul h1 */
+        .identity-card h1 {
+            text-align: center;
+            color: #1a2b4c;
+            border-bottom: 2px solid #e0e0e0; /* Garis bawah judul */
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        /* Mengatur paragraf (data identitas) */
+        .identity-card p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Memberi penebalan pada label (Nama, NIM, dll.) */
+        .identity-card p strong {
+            display: inline-block;
+            width: 150px; /* Memberi lebar tetap agar rapi */
+            color: #555;
+        }
+    </style>
 </head>
 <body>
-    <h1>Identitas Mahasiswa</h1>
-    <p>Nama: Roky Zofyan Amirullah</p>
-    <p>NIM: 230411100205</p>
+
+    <div class="identity-card">
+        <h1>Identitas Mahasiswa</h1>
+        
+        <p><strong>Nama:</strong> Roky Zofyan Amirullah</p>
+        <p><strong>NIM:</strong> 230411100205</p>
+        
+        <hr style="border: 0; border-top: 1px solid #eee;"> <p><strong>Program Studi:</strong> [GANTI DENGAN JURUSAN ANDA]</p>
+        <p><strong>Fakultas:</strong> TEKNIK</p>
+        <p><strong>Universitas:</strong> Universitas Trunojoyo Madura</p>
+        <p><strong>Mata Kuliah:</strong> Proyek Perangkat Lunak</p>
+        
+    </div>
+
 </body>
 </html>
